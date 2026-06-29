@@ -1,0 +1,10 @@
+{
+    "Columns": [
+        "Bucket",
+        "Category",
+        "Title",
+        "Raw Date",
+        "Media Type",
+        "Publication"
+    ]
+}
