@@ -112,13 +112,13 @@ def main_window():
             if cb_deduplication==True:
                 data_dict = common.jsonfile_to_dict('json_files/json_dedup.json')
                 dedup_state = data_dict['dedup_state']
-                df_no_duplicates = tool_apps.deduplicate(df, dedup_state)
+                df = tool_apps.deduplicate(df, dedup_state)
 
             if cb_cleaning==True:
-                df_cleaned = tool_apps.cleaning_formatting(df_no_duplicates)
+                df = tool_apps.cleaning_formatting(df)
             
             st.download_button(
                 label="Download Excel",
-                data=common.to_excel(df_cleaned),
+                data=common.to_excel(df),
                 file_name="cleaned_data.xlsx",
                 mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheetml.sheet",)
